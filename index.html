@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/signature_pad.min.js"></script>
+    <style>
+      .signature-pad{
+        width: 542px;
+        height: 386px;
+        background-color: #ebebeb;
+      }
+      .signature-pad--actions{
+        margin-top: 0;
+      }
+      .signature-pad--top{
+        margin-top: 0;
+      }
+      .signature-pad--body{
+        width: 480px !important;
+        height: 242px !important;
+        margin-left: 15px;
+      }
+    </style>
+</head>
+<body>
+    <div id="signature-pad" class="signature-pad">
+      <div class="signature-pad--top">
+        <div class="signature-pad--actions">
+          <div class="u-options-wrapper">
+            <div class="u-pen-width">
+              <div type="button" class="button save" data-action="draw"  data-toggle="modal" data-target="#myModal">笔宽</div>
+              <img src="./img/pen-width.png" alt="">
+            </div>
+            <div class="u-pen-color"  data-action="colorbtn"  id='colorbtn'>
+              <div type="button" class="button save">字体颜色</div>
+              <img src="./img/font-color.png" alt="">
+            </div>
+            <div class="u-erase"  data-action="erase">
+              <div type="button" class="button save">橡皮擦</div>
+              <img src="./img/erase.png" alt="">
+            </div>
+            <div class="u-undo" data-action="undo">
+              <div type="button" class="button" >撤销</div>
+              <img src="./img/undo.png" alt="">
+            </div>
+            <div class="u-clear" data-action="clear">
+              <div type="button" class="button clear" >清空</div>
+            </div>
+            
+            <input type="color" class="button save" data-action="color" style="visibility: hidden;" />
+          </div>
+        </div>
+      </div>
+      <div class="signature-pad--body">
+        <canvas style="width: 478px;height: 240px;"></canvas>
+      </div>
+      <div class="signature-pad-footer" style="height: 68px;line-height: 68px; text-align: center;">
+        <button class="btn  btn-primary" type="button" style="margin-right: 40px;"  data-action="save-png">确定</button>
+        <button class="btn " type="button">取消</button>
+      </div>
+    </div>
+<!-- Button to trigger modal -->
+<!-- <a href="#myModal" role="button" class="btn" data-toggle="modal">查看演示案例</a> -->
+    <!-- Modal -->
+    <div id="myModal" style="width: 314px;height: 138px;" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header" style="background-color: #f4faff;">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h5 id="myModalLabel" style="margin: 0 0;">笔宽设置</h5>
+      </div>
+      <div class="modal-body" style="padding-bottom: 0;">
+        <p style="margin-bottom:0px;">笔宽(2-28): <input type="number" id="fontWidth" style="height: 28px;line-height: 28px;margin-bottom: 0;" value="2" min="2" max="28" ></p>
+      </div>
+      <div class="modal-footer" style="background-color: #fff;border-top:0;text-align: center;">
+        <button class="btn btn-primary" id="penWidthOk">确定</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+      </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+</html>
